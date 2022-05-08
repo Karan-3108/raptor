@@ -1,16 +1,16 @@
-# Junø
+# Raptor
 
 
-![c11](https://user-images.githubusercontent.com/79812965/131373443-5ff0d9f6-2e2a-41bd-8347-22ac4983e625.jpg)
+
 
 ❗️For issue disclosure, check out [SECURITY.md](./SECURITY.md) ❗️
 
 🚀 For release procedures, check out [RELEASES.md](./RELEASES.md). 🚀
 
-**Juno** is an open source platform for inter-operable smart contracts which automatically execute, control or document a procedure of events and actions 
+**Raptor** is an open source platform for inter-operable smart contracts which automatically execute, control or document a procedure of events and actions 
 according to the terms of the contract or agreement to be valid and usable across multiple sovereign networks.
 
-Juno is a **sovereign public blockchain** in the Cosmos ecosystem. It aims to provide a sandbox environment for the deployment 
+Raptor is a **sovereign public blockchain** in the Cosmos ecosystem. It aims to provide a sandbox environment for the deployment 
 of such inter-operable smart contracts. The network serves as a **decentralized, permissionless, and censorship resistant** zone 
 for developers to efficiently and securely launch application specific smart contracts. Developers can leverage proven frameworks 
 and compile code in various languages, like **Rust & Go** with the potential future addition of C and C++.
@@ -21,7 +21,7 @@ At the heart of Cosmos is the Inter Blockchain Communication Protocol (IBC), whi
 that can be used to transfer data packets across thousands of independent networks supporting IBC. 
 Naturally, the next evolutionary milestone is to enable cross-network smart contracts.
 
-The Juno blockchain is built using the **Cosmos SDK framework**. 
+The Raptor blockchain is built using the **Cosmos SDK framework**. 
 Cosmos SDK is a generalized framework that simplifies the process of building secure blockchain applications on top of Tendermint BFT. 
 It is based on two major principles: Modularity and capabilities-based security.
 
@@ -31,12 +31,12 @@ Tendermint BFT is a solution that packages the networking and consensus layers o
 allowing developers to focus on application development as opposed to the complex underlying protocol. 
 As a result, Tendermint saves hundreds of hours of development time.
 
-Juno originates from a **community driven initiative**, prompted by developers, validators and delegators in the Cosmos ecosystem.
+Raptor originates from a **community driven initiative**, prompted by developers, validators and delegators in the Cosmos ecosystem.
 The common vision is to preserve the neutrality, performance, and reliability of the Cosmos Hub. This is achieved by offloading smart contract deployment to a dedicated sister Hub. 
-Juno plans to make an early connection to the Cosmos Hub enabling IBC transfers, cross-chain smart contracts and shared security.
+Raptor plans to make an early connection to the Cosmos Hub enabling IBC transfers, cross-chain smart contracts and shared security.
 
-A decentralized launch of the Juno main-net was enabled by a large set of independent validators from across the blockchain space.
-$RAPTOR, the native asset, has many functions like securing the Juno Hub and serving as a work token to give access to on-chain governance voting rights 
+A decentralized launch of the Raptor main-net was enabled by a large set of independent validators from across the blockchain space.
+$RAPTOR, the native asset, has many functions like securing the Raptor Hub and serving as a work token to give access to on-chain governance voting rights 
 and to provide utility in the deployment and execution of smart contracts.
 
 
@@ -74,22 +74,22 @@ and to provide utility in the deployment and execution of smart contracts.
 
 
 
-![c22](https://user-images.githubusercontent.com/79812965/131373499-81549b6c-6ab6-49fa-9d2f-4f7b79f74509.jpg)
 
 
 
 
 
 
-**Tokenomics & reward shedule** (updated on 24.07.2021)
+
+**Tokenomics & reward shedule** (updated on 24.07.2022)
 
 ⚪️ **Ticker**: RAPTOR
 
 ⚪️ **Decimals**: 6
 
-⚪️ **Unit**: uJuno
+⚪️ **Unit**: uRaptor
 
-⚪️ **Supply**: Snapshot of Cosmoshub-3 at 06:00 PM UTC on Feb 18th 2021
+⚪️ **Supply**: Snapshot of Cosmoshub-3 at 06:00 PM UTC on Feb 18th 2022
 
 ⚪️ **Rewards**: Fixed yearly reward schedule (Reward model below)
 
@@ -119,7 +119,7 @@ at the time of the Stargate snapshot on Feb. 18th 6:00 PM UTC.
 Addresses that qualify are included in the RAPTOR genesis block at launch. 
 All exchange validators & their delegators are excluded from the genesis allocation. Additionally any unbonded ATOM at the time of the snapshot is excluded.
 A whale cap was voted in by the community, effectively hard-capping $ATOM accounts at 50 thousand $ATOM in order to ensure a less top heavy allocation.
-Approx 10% of the supply difference is allocated to the development reserve (multi-sig) address for the funding of core-development efforts. The remaining 90% of the excess supply to be allocated in the following ways (20 million $Juno community pool, Smart contract competition 2.373.341,66 million to be managed/distributed by the multi-sig committee. The remaining difference will not be included in the genesis file ie. burned)
+Approx 10% of the supply difference is allocated to the development reserve (multi-sig) address for the funding of core-development efforts. The remaining 90% of the excess supply to be allocated in the following ways (20 million $Raptor community pool, Smart contract competition 2.373.341,66 million to be managed/distributed by the multi-sig committee. The remaining difference will not be included in the genesis file ie. burned)
 
 
 
@@ -127,21 +127,21 @@ Approx 10% of the supply difference is allocated to the development reserve (mul
 
 ⚪️ Phase 1: Fixed inflation 40% 
 
-New Juno in year 1 = (+25.961.297)
+New Raptor in year 1 = (+25.961.297)
 
 Supply after year 1 = 90.864.540 $RAPTOR
 
 
 ⚪️ Phase 2: Fixed inflation 20% 
 
-New Juno in year 2 = (+18.172.908)
+New Raptor in year 2 = (+18.172.908)
 
 Supply after year 2 = 109.037.449 RAPTOR
 
 
 ⚪️ Phase 3: Fixed inflation 10% 
 
-New Juno in year 3= (+10.903.744)
+New Raptor in year 3= (+10.903.744)
 
 Supply after year 3 = 119.941.194 RAPTOR
 
@@ -172,7 +172,7 @@ RAPTOR MAX SUPPLY (185.5 Million)
 After year 12 the inflation reward schedule ends. 
 Network incentives would primarily come from smart contract usage and regular tx fees generated on the network.
 
-**Juno** is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
+**Raptor** is a blockchain built using Cosmos SDK and Tendermint and created with [Starport](https://github.com/tendermint/starport).
 
 ## Get started
 
@@ -184,10 +184,10 @@ STAKE_TOKEN=uraptorx UNSAFE_CORS=true docker-compose up
 
 ## Learn more
 
-- [Juno](https://raptorchain.com)
+- [Raptor](https://raptorchain.com)
 - [Starport](https://github.com/tendermint/starport)
 - [Cosmos SDK documentation](https://docs.cosmos.network)
 - [Cosmos SDK Tutorials](https://tutorials.cosmos.network)
-- [Telegram](https://t.me/JunoNetwork)
+- [Telegram](https://t.me/RaptorNetwork)
 - [Discord](https://discord.gg/QcWPfK4gJ2)
 
