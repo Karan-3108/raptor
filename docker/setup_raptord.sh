@@ -2,8 +2,8 @@
 #set -o errexit -o nounset -o pipefail
 
 PASSWORD=${PASSWORD:-1234567890}
-STAKE=${STAKE_TOKEN:-ustake}
-FEE=${FEE_TOKEN:-ucosm}
+STAKE=${STAKE_TOKEN:-rstake}
+FEE=${FEE_TOKEN:-rcosm}
 CHAIN_ID=${CHAIN_ID:-testing}
 MONIKER=${MONIKER:-node001}
 KEYRING="--keyring-backend test"
