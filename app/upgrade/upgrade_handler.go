@@ -9,14 +9,14 @@ import (
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 )
 
-// Address of the account which will have all juno sent to the unity proposal
+// Address of the account which will have all raptor sent to the unity proposal
 var addressesToBeAdjusted = []string{
-	"juno1aeh8gqu9wr4u8ev6edlgfq03rcy6v5twfn0ja8",
+	"raptor1aeh8gqu9wr4u8ev6edlgfq03rcy6v5twfn0ja8",
 }
 
 // UnityContractByteAddress is the bytes of the public key for the address of the Unity contract
-// $ junod keys parse juno1nz96hjc926e6a74gyvkwvtt0qhu22wx049c6ph6f4q8kp3ffm9xq5938mr
-// human: juno
+// $ raptord keys parse raptor1nz96hjc926e6a74gyvkwvtt0qhu22wx049c6ph6f4q8kp3ffm9xq5938mr
+// human: raptor
 // bytes: 5BEF9E5318ED6716A11179C70B06656E9FB91D241A1C594F344B325D9110D94C
 const UnityContractByteAddress = "5BEF9E5318ED6716A11179C70B06656E9FB91D241A1C594F344B325D9110D94C"
 
@@ -27,7 +27,7 @@ func ClawbackCoinFromAccount(ctx sdk.Context, accAddr sdk.AccAddress, staking *s
 	now := ctx.BlockHeader().Time
 
 	// this loop will complete all delegator's active redelegations
-	for _, activeRedelegation:= range staking.GetRedelegations(ctx, accAddr, 65535) {
+	for _, activeRedelegation := range staking.GetRedelegations(ctx, accAddr, 65535) {
 		// src/dest validator addresses of this redelegation
 		redelegationSrc, _ := sdk.ValAddressFromBech32(activeRedelegation.ValidatorSrcAddress)
 		redelegationDst, _ := sdk.ValAddressFromBech32(activeRedelegation.ValidatorDstAddress)
@@ -56,7 +56,6 @@ func ClawbackCoinFromAccount(ctx sdk.Context, accAddr sdk.AccAddress, staking *s
 			panic(err)
 		}
 	}
-
 
 	// this loop will complete all delegator's unbonding delegations
 	for _, unbondingDelegation := range staking.GetAllUnbondingDelegations(ctx, accAddr) {

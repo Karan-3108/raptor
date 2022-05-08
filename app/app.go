@@ -16,11 +16,11 @@ import (
 	tmos "github.com/tendermint/tendermint/libs/os"
 	dbm "github.com/tendermint/tm-db"
 
-	unity "github.com/CosmosContracts/juno/app/upgrade"
-	"github.com/CosmosContracts/juno/docs"
-	"github.com/CosmosContracts/juno/x/mint"
-	mintkeeper "github.com/CosmosContracts/juno/x/mint/keeper"
-	minttypes "github.com/CosmosContracts/juno/x/mint/types"
+	unity "github.com/Karan-3108/raptor/app/upgrade"
+	"github.com/Karan-3108/raptor/docs"
+	"github.com/Karan-3108/raptor/x/mint"
+	mintkeeper "github.com/Karan-3108/raptor/x/mint/keeper"
+	minttypes "github.com/Karan-3108/raptor/x/mint/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
 	"github.com/cosmos/cosmos-sdk/client/rpc"
@@ -106,8 +106,8 @@ import (
 )
 
 const (
-	AccountAddressPrefix = "juno"
-	Name                 = "juno"
+	AccountAddressPrefix = "raptor"
+	Name                 = "raptor"
 )
 
 // this line is used by starport scaffolding # stargate/wasm/app/enabledProposals

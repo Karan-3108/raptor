@@ -136,8 +136,8 @@ func (m *Params) GetBlocksPerYear() uint64 {
 }
 
 func init() {
-	proto.RegisterType((*Minter)(nil), "CosmosContracts.juno.mint.Minter")
-	proto.RegisterType((*Params)(nil), "CosmosContracts.juno.mint.Params")
+	proto.RegisterType((*Minter)(nil), "Karan-3108.raptor.mint.Minter")
+	proto.RegisterType((*Params)(nil), "Karan-3108.raptor.mint.Params")
 }
 
 func init() { proto.RegisterFile("mint/mint.proto", fileDescriptor_e1b9fbb701b2a577) }

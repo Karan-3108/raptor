@@ -36,11 +36,11 @@ The common vision is to preserve the neutrality, performance, and reliability of
 Juno plans to make an early connection to the Cosmos Hub enabling IBC transfers, cross-chain smart contracts and shared security.
 
 A decentralized launch of the Juno main-net was enabled by a large set of independent validators from across the blockchain space.
-$JUNO, the native asset, has many functions like securing the Juno Hub and serving as a work token to give access to on-chain governance voting rights 
+$RAPTOR, the native asset, has many functions like securing the Juno Hub and serving as a work token to give access to on-chain governance voting rights 
 and to provide utility in the deployment and execution of smart contracts.
 
 
-**What differentiates JUNO from other Smart Contract networks?**
+**What differentiates RAPTOR from other Smart Contract networks?**
 
 ⚪️ Interoperable smart contracts
 
@@ -83,7 +83,7 @@ and to provide utility in the deployment and execution of smart contracts.
 
 **Tokenomics & reward shedule** (updated on 24.07.2021)
 
-⚪️ **Ticker**: JUNO
+⚪️ **Ticker**: RAPTOR
 
 ⚪️ **Decimals**: 6
 
@@ -96,27 +96,27 @@ and to provide utility in the deployment and execution of smart contracts.
 ⚪️ **Community pool tax**: 5% of block rewards
 
 
-✅ Circulating supply at genesis 64.903.243 $JUNO (64.9 Million)
+✅ Circulating supply at genesis 64.903.243 $RAPTOR (64.9 Million)
 
-✅ Max supply (After year 12): 185.562.268 JUNO (185.5 Million)
+✅ Max supply (After year 12): 185.562.268 RAPTOR (185.5 Million)
 
 
 **Supply Breakdown**
 
-⚪️ Stakedrop: 30.663.193 $JUNO
+⚪️ Stakedrop: 30.663.193 $RAPTOR
 
-⚪️ Community Pool: 20.000.000 $JUNO
+⚪️ Community Pool: 20.000.000 $RAPTOR
 
-⚪️ Development Reserve (Multi-sig): 11.866.708 $JUNO
+⚪️ Development Reserve (Multi-sig): 11.866.708 $RAPTOR
 
-⚪️ Smart Contract Challenges: 2.373.341 $JUNO
+⚪️ Smart Contract Challenges: 2.373.341 $RAPTOR
 
 
 **Genesis Distribution**
 
-A 1:1 stakedrop is allocated to $ATOM stakers, giving the $JUNO genesis supply to staked $ATOM balances that had their assets bonded 
+A 1:1 stakedrop is allocated to $ATOM stakers, giving the $RAPTOR genesis supply to staked $ATOM balances that had their assets bonded 
 at the time of the Stargate snapshot on Feb. 18th 6:00 PM UTC. 
-Addresses that qualify are included in the JUNO genesis block at launch. 
+Addresses that qualify are included in the RAPTOR genesis block at launch. 
 All exchange validators & their delegators are excluded from the genesis allocation. Additionally any unbonded ATOM at the time of the snapshot is excluded.
 A whale cap was voted in by the community, effectively hard-capping $ATOM accounts at 50 thousand $ATOM in order to ensure a less top heavy allocation.
 Approx 10% of the supply difference is allocated to the development reserve (multi-sig) address for the funding of core-development efforts. The remaining 90% of the excess supply to be allocated in the following ways (20 million $Juno community pool, Smart contract competition 2.373.341,66 million to be managed/distributed by the multi-sig committee. The remaining difference will not be included in the genesis file ie. burned)
@@ -129,45 +129,45 @@ Approx 10% of the supply difference is allocated to the development reserve (mul
 
 New Juno in year 1 = (+25.961.297)
 
-Supply after year 1 = 90.864.540 $JUNO
+Supply after year 1 = 90.864.540 $RAPTOR
 
 
 ⚪️ Phase 2: Fixed inflation 20% 
 
 New Juno in year 2 = (+18.172.908)
 
-Supply after year 2 = 109.037.449 JUNO
+Supply after year 2 = 109.037.449 RAPTOR
 
 
 ⚪️ Phase 3: Fixed inflation 10% 
 
 New Juno in year 3= (+10.903.744)
 
-Supply after year 3 = 119.941.194 JUNO
+Supply after year 3 = 119.941.194 RAPTOR
 
 
 Once the inflation reaches 10% it gradually reduces on a fixed 1% basis each year.
 
 
-⚪️ Phase 4 = Fixed 9% (+10.794.707) Supply = 130.735.901 JUNO
+⚪️ Phase 4 = Fixed 9% (+10.794.707) Supply = 130.735.901 RAPTOR
 
-⚪️ Phase 5 = Fixed 8% (+10.458.872) Supply = 141.194.773 JUNO
+⚪️ Phase 5 = Fixed 8% (+10.458.872) Supply = 141.194.773 RAPTOR
 
-⚪️ Phase 6 = Fixed 7% (+9.883.634) Supply = 151.078.407 JUNO
+⚪️ Phase 6 = Fixed 7% (+9.883.634) Supply = 151.078.407 RAPTOR
 
-⚪️ Phase 7 = Fixed 6% (+9.064.704) Supply = 160.143.112  JUNO
+⚪️ Phase 7 = Fixed 6% (+9.064.704) Supply = 160.143.112  RAPTOR
 
-⚪️ Phase 8 = Fixed 5% (+8.007.155) Supply = 168.150.267  JUNO
+⚪️ Phase 8 = Fixed 5% (+8.007.155) Supply = 168.150.267  RAPTOR
 
-⚪️ Phase 9 = Fixed 4% (+6.726.010) Supply = 174.876.278 JUNO
+⚪️ Phase 9 = Fixed 4% (+6.726.010) Supply = 174.876.278 RAPTOR
 
-⚪️ Phase 10 = Fixed 3% (+5.246.288) Supply = 180.122.566 JUNO
+⚪️ Phase 10 = Fixed 3% (+5.246.288) Supply = 180.122.566 RAPTOR
 
-⚪️ Phase 11 = Fixed 2% (+3.602.451) Supply = 183.725.018 JUNO
+⚪️ Phase 11 = Fixed 2% (+3.602.451) Supply = 183.725.018 RAPTOR
 
-⚪️ Phase 12 = Fixed 1% (+1.837.250) Supply = 185.562.268 JUNO 
+⚪️ Phase 12 = Fixed 1% (+1.837.250) Supply = 185.562.268 RAPTOR 
 
-JUNO MAX SUPPLY (185.5 Million)
+RAPTOR MAX SUPPLY (185.5 Million)
 
 After year 12 the inflation reward schedule ends. 
 Network incentives would primarily come from smart contract usage and regular tx fees generated on the network.
@@ -179,12 +179,12 @@ Network incentives would primarily come from smart contract usage and regular tx
 If you have [Docker](https://www.docker.com/) installed, then you can run a local node with a single command.
 
 ```bash
-STAKE_TOKEN=ujunox UNSAFE_CORS=true docker-compose up
+STAKE_TOKEN=uraptorx UNSAFE_CORS=true docker-compose up
 ```
 
 ## Learn more
 
-- [Juno](https://junochain.com)
+- [Juno](https://raptorchain.com)
 - [Starport](https://github.com/tendermint/starport)
 - [Cosmos SDK documentation](https://docs.cosmos.network)
 - [Cosmos SDK Tutorials](https://tutorials.cosmos.network)

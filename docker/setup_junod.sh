@@ -12,13 +12,13 @@ BLOCK_GAS_LIMIT=${GAS_LIMIT:-100000000} # should mirror mainnet
 echo "Configured Block Gas Limit: $BLOCK_GAS_LIMIT"
 
 # check the genesis file
-GENESIS_FILE="$HOME"/.juno/config/genesis.json
+GENESIS_FILE="$HOME"/.raptor/config/genesis.json
 if [ -f "$GENESIS_FILE" ]; then
   echo "$GENESIS_FILE exists..."
 else
   echo "$GENESIS_FILE does not exist. Generating..."
 
-  junod init --chain-id "$CHAIN_ID" "$MONIKER"
+  raptord init --chain-id "$CHAIN_ID" "$MONIKER"
   # staking/governance token is hardcoded in config, change this
   sed -i "s/\"stake\"/\"$STAKE\"/" "$GENESIS_FILE"
   # this is essential for sub-1s block times (or header times go crazy)
@@ -26,12 +26,12 @@ else
   # change gas limit to mainnet value
   sed -i 's/"max_gas": "-1"/"max_gas": "'"$BLOCK_GAS_LIMIT"'"/' "$GENESIS_FILE"
   # change default keyring-backend to test
-  sed -i 's/keyring-backend = "os"/keyring-backend = "test"/' "$HOME"/.juno/config/client.toml
+  sed -i 's/keyring-backend = "os"/keyring-backend = "test"/' "$HOME"/.raptor/config/client.toml
 fi
 
-APP_TOML_CONFIG="$HOME"/.juno/config/app.toml
-APP_TOML_CONFIG_NEW="$HOME"/.juno/config/app_new.toml
-CONFIG_TOML_CONFIG="$HOME"/.juno/config/config.toml
+APP_TOML_CONFIG="$HOME"/.raptor/config/app.toml
+APP_TOML_CONFIG_NEW="$HOME"/.raptor/config/app_new.toml
+CONFIG_TOML_CONFIG="$HOME"/.raptor/config/config.toml
 if [ -n $UNSAFE_CORS ]; then
   echo "Unsafe CORS set... updating app.toml and config.toml"
   # sorry about this bit, but toml is rubbish for structural editing
@@ -43,22 +43,22 @@ if [ -n $UNSAFE_CORS ]; then
 fi
 
 # are we running for the first time?
-if ! junod keys show validator $KEYRING; then
-  (echo "$PASSWORD"; echo "$PASSWORD") | junod keys add validator $KEYRING
+if ! raptord keys show validator $KEYRING; then
+  (echo "$PASSWORD"; echo "$PASSWORD") | raptord keys add validator $KEYRING
 
   # hardcode the validator account for this instance
-  echo "$PASSWORD" | junod add-genesis-account validator "1000000000$STAKE,1000000000$FEE" $KEYRING
+  echo "$PASSWORD" | raptord add-genesis-account validator "1000000000$STAKE,1000000000$FEE" $KEYRING
 
   # (optionally) add a few more genesis accounts
   for addr in "$@"; do
     echo $addr
-    junod add-genesis-account "$addr" "1000000000$STAKE,1000000000$FEE"
+    raptord add-genesis-account "$addr" "1000000000$STAKE,1000000000$FEE"
   done
 
   # submit a genesis validator tx
   ## Workraround for https://github.com/cosmos/cosmos-sdk/issues/8251
-  (echo "$PASSWORD"; echo "$PASSWORD"; echo "$PASSWORD") | junod gentx validator "250000000$STAKE" --chain-id="$CHAIN_ID" --amount="250000000$STAKE" $KEYRING
+  (echo "$PASSWORD"; echo "$PASSWORD"; echo "$PASSWORD") | raptord gentx validator "250000000$STAKE" --chain-id="$CHAIN_ID" --amount="250000000$STAKE" $KEYRING
   ## should be:
-  # (echo "$PASSWORD"; echo "$PASSWORD"; echo "$PASSWORD") | junod gentx validator "250000000$STAKE" --chain-id="$CHAIN_ID"
-  junod collect-gentxs
+  # (echo "$PASSWORD"; echo "$PASSWORD"; echo "$PASSWORD") | raptord gentx validator "250000000$STAKE" --chain-id="$CHAIN_ID"
+  raptord collect-gentxs
 fi

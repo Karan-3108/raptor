@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/CosmosContracts/juno/app"
+	"github.com/Karan-3108/raptor/app"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/tendermint/starport/starport/pkg/cosmoscmd"
 	tmcmds "github.com/tendermint/tendermint/cmd/tendermint/commands"

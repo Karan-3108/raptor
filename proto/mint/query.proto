@@ -1,11 +1,11 @@
 syntax = "proto3";
-package CosmosContracts.juno.mint;
+package Karan-3108.raptor.mint;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "mint/mint.proto";
 
-option go_package = "github.com/CosmosContracts/juno/x/mint/types";
+option go_package = "github.com/Karan-3108/raptor/x/mint/types";
 
 // Query provides defines the gRPC querier service.
 service Query {

@@ -1,4 +1,4 @@
-module github.com/CosmosContracts/juno
+module github.com/Karan-3108/raptor
 
 go 1.17
 

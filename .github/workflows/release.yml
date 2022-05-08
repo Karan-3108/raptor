@@ -10,9 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Docker compose
-        run: STAKE_TOKEN="ujunox" docker-compose up -d
+        run: STAKE_TOKEN="uraptorx" docker-compose up -d
       - name: Copy binary
-        run: docker cp juno_node_1:/usr/bin/junod ./junod
+        run: docker cp raptor_node_1:/usr/bin/raptord ./raptord
       - name: Get release
         id: get_release
         uses: bruceadams/get-release@v1.2.3
@@ -24,6 +24,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: ./junod
-          asset_name: junod
+          asset_path: ./raptord
+          asset_name: raptord
           asset_content_type: application/octet-stream

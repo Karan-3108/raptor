@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/suite"
 
-	"github.com/CosmosContracts/juno/app"
-	junoapp "github.com/CosmosContracts/juno/app"
-	unity "github.com/CosmosContracts/juno/app/upgrade"
+	"github.com/Karan-3108/raptor/app"
+	raptorapp "github.com/Karan-3108/raptor/app"
+	unity "github.com/Karan-3108/raptor/app/upgrade"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	"github.com/stretchr/testify/require"
@@ -49,7 +49,7 @@ type UpgradeTestSuite struct {
 	suite.Suite
 
 	ctx sdk.Context
-	app *junoapp.App
+	app *raptorapp.App
 }
 
 /*
@@ -90,7 +90,7 @@ func (suite *UpgradeTestSuite) TestAdjustFunds() {
 				// unbond the accAddr delegations, send all the unbonding and unbonded tokens to the community pool
 				bankBaseKeeper, _ := suite.app.BankKeeper.(bankkeeper.BaseKeeper)
 
-				// move all juno from acc to community pool (uncluding bonded juno)
+				// move all raptor from acc to community pool (uncluding bonded raptor)
 				unity.ClawbackCoinFromAccount(suite.ctx, addr2, &suite.app.StakingKeeper, &bankBaseKeeper)
 
 				suite.app.EndBlock(abci.RequestEndBlock{})
@@ -106,7 +106,7 @@ func (suite *UpgradeTestSuite) TestAdjustFunds() {
 				later := afterBondPool.Add(afterUnbondPool)
 				require.Equal(suite.T(), initial.Sub(bondTokens), later)
 
-				// 2. check if acc2 has 0 juno
+				// 2. check if acc2 has 0 raptor
 				afterAcc2Amount := suite.app.BankKeeper.GetBalance(suite.ctx, addr2, sdk.DefaultBondDenom).Amount
 				require.Equal(suite.T(), sdk.ZeroInt(), afterAcc2Amount)
 
@@ -132,7 +132,7 @@ func (suite *UpgradeTestSuite) TestAdjustFunds() {
 	}
 }
 
-func checkValidator(t *testing.T, app *junoapp.App, addr sdk.ValAddress, expFound bool) types.Validator {
+func checkValidator(t *testing.T, app *raptorapp.App, addr sdk.ValAddress, expFound bool) types.Validator {
 	ctxCheck := app.BaseApp.NewContext(true, tmproto.Header{})
 	validator, found := app.StakingKeeper.GetValidator(ctxCheck, addr)
 
@@ -141,7 +141,7 @@ func checkValidator(t *testing.T, app *junoapp.App, addr sdk.ValAddress, expFoun
 }
 
 func checkDelegation(
-	t *testing.T, app *junoapp.App, delegatorAddr sdk.AccAddress,
+	t *testing.T, app *raptorapp.App, delegatorAddr sdk.AccAddress,
 	validatorAddr sdk.ValAddress, expFound bool, expShares sdk.Dec,
 ) {
 
@@ -158,7 +158,7 @@ func checkDelegation(
 }
 
 // CheckBalance checks the balance of an account.
-func checkBalance(t *testing.T, app *junoapp.App, addr sdk.AccAddress, balances sdk.Coins) {
+func checkBalance(t *testing.T, app *raptorapp.App, addr sdk.AccAddress, balances sdk.Coins) {
 	ctxCheck := app.BaseApp.NewContext(true, tmproto.Header{})
 	require.True(t, balances.IsEqual(app.BankKeeper.GetAllBalances(ctxCheck, addr)))
 }
@@ -196,7 +196,7 @@ func (suite *UpgradeTestSuite) SetupValidatorDelegator() {
 	require.NoError(suite.T(), err)
 
 	header := tmproto.Header{Height: suite.app.LastBlockHeight() + 1}
-	txGen := cosmoscmd.MakeEncodingConfig(junoapp.ModuleBasics).TxConfig
+	txGen := cosmoscmd.MakeEncodingConfig(raptorapp.ModuleBasics).TxConfig
 	_, _, err = cosmossimapp.SignCheckDeliver(suite.T(), txGen, suite.app.BaseApp, header, []sdk.Msg{createValidatorMsg}, "", []uint64{0}, []uint64{0}, true, true, priv1)
 	require.NoError(suite.T(), err)
 	checkBalance(suite.T(), suite.app, addr1, sdk.Coins{genCoin.Sub(bondCoin)})

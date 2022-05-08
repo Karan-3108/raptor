@@ -1,5 +1,5 @@
-# docker build . -t cosmoscontracts/juno:latest
-# docker run --rm -it cosmoscontracts/juno:latest /bin/sh
+# docker build . -t Karan-3108/raptor:latest
+# docker run --rm -it Karan-3108/raptor:latest /bin/sh
 FROM golang:1.17-alpine3.15 AS go-builder
 ARG arch=x86_64
 
@@ -26,14 +26,14 @@ RUN cp /lib/libwasmvm_muslc.${arch}.a /lib/libwasmvm_muslc.a
 
 # force it to use static lib (from above) not standard libgo_cosmwasm.so file
 RUN LEDGER_ENABLED=false BUILD_TAGS=muslc LINK_STATICALLY=true make build
-RUN file /code/bin/junod
+RUN file /code/bin/raptord
 RUN echo "Ensuring binary is statically linked ..." \
-  && (file /code/bin/junod | grep "statically linked")
+  && (file /code/bin/raptord | grep "statically linked")
 
 # --------------------------------------------------------
 FROM alpine:3.15
 
-COPY --from=go-builder /code/bin/junod /usr/bin/junod
+COPY --from=go-builder /code/bin/raptord /usr/bin/raptord
 
 COPY docker/* /opt/
 RUN chmod +x /opt/*.sh
@@ -47,4 +47,4 @@ EXPOSE 26656
 # tendermint rpc
 EXPOSE 26657
 
-CMD ["/usr/bin/junod", "version"]
+CMD ["/usr/bin/raptord", "version"]

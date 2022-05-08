@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/CosmosContracts/juno/app"
+	"github.com/Karan-3108/raptor/app"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/spf13/cobra"
 	"github.com/tendermint/starport/starport/pkg/cosmoscmd"

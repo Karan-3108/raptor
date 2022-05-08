@@ -9,15 +9,15 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	junoapp "github.com/CosmosContracts/juno/app"
+	raptorapp "github.com/Karan-3108/raptor/app"
 	"github.com/cosmos/cosmos-sdk/simapp"
 
-	"github.com/CosmosContracts/juno/x/mint/types"
+	"github.com/Karan-3108/raptor/x/mint/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 // returns context and an app with updated mint keeper
-func createTestApp(isCheckTx bool) (*junoapp.App, sdk.Context) {
+func createTestApp(isCheckTx bool) (*raptorapp.App, sdk.Context) {
 	app := setup(isCheckTx)
 
 	ctx := app.BaseApp.NewContext(isCheckTx, tmproto.Header{})
@@ -27,7 +27,7 @@ func createTestApp(isCheckTx bool) (*junoapp.App, sdk.Context) {
 	return app, ctx
 }
 
-func setup(isCheckTx bool) *junoapp.App {
+func setup(isCheckTx bool) *raptorapp.App {
 	app, genesisState := genApp(!isCheckTx, 5)
 	if !isCheckTx {
 		// init chain must be called to stop deliverState from being nil
@@ -49,10 +49,10 @@ func setup(isCheckTx bool) *junoapp.App {
 	return app
 }
 
-func genApp(withGenesis bool, invCheckPeriod uint) (*junoapp.App, junoapp.GenesisState) {
+func genApp(withGenesis bool, invCheckPeriod uint) (*raptorapp.App, raptorapp.GenesisState) {
 	db := dbm.NewMemDB()
-	encCdc := cosmoscmd.MakeEncodingConfig(junoapp.ModuleBasics)
-	app := junoapp.New(
+	encCdc := cosmoscmd.MakeEncodingConfig(raptorapp.ModuleBasics)
+	app := raptorapp.New(
 		log.NewNopLogger(),
 		db,
 		nil,
@@ -63,10 +63,10 @@ func genApp(withGenesis bool, invCheckPeriod uint) (*junoapp.App, junoapp.Genesi
 		encCdc,
 		simapp.EmptyAppOptions{})
 
-	originalApp := app.(*junoapp.App)
+	originalApp := app.(*raptorapp.App)
 	if withGenesis {
-		return originalApp, junoapp.NewDefaultGenesisState(encCdc.Marshaler)
+		return originalApp, raptorapp.NewDefaultGenesisState(encCdc.Marshaler)
 	}
 
-	return originalApp, junoapp.GenesisState{}
+	return originalApp, raptorapp.GenesisState{}
 }
