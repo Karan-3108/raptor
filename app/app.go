@@ -144,7 +144,7 @@ func GetWasmOpts(appOpts servertypes.AppOptions) []wasm.Option {
 		wasmOpts = append(wasmOpts, wasmkeeper.WithVMCacheMetrics(prometheus.DefaultRegisterer))
 	}
 
-	wasmOpts = append(wasmOpts, wasmkeeper.WithGasRegister(NewJunoWasmGasRegister()))
+	wasmOpts = append(wasmOpts, wasmkeeper.WithGasRegister(NewRaptorWasmGasRegister()))
 
 	return wasmOpts
 }
@@ -272,7 +272,7 @@ type App struct {
 	mm *module.Manager
 }
 
-// New returns a reference to an initialized Juno.
+// New returns a reference to an initialized Raptor.
 func New(
 	logger log.Logger,
 	db dbm.DB,
@@ -681,7 +681,7 @@ func (app *App) LegacyAmino() *codec.LegacyAmino {
 	return app.cdc
 }
 
-// AppCodec returns Juno's app codec.
+// AppCodec returns Raptor's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
@@ -689,7 +689,7 @@ func (app *App) AppCodec() codec.Codec {
 	return app.appCodec
 }
 
-// InterfaceRegistry returns Juno's InterfaceRegistry
+// InterfaceRegistry returns Raptor's InterfaceRegistry
 func (app *App) InterfaceRegistry() types.InterfaceRegistry {
 	return app.interfaceRegistry
 }

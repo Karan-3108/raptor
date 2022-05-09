@@ -13,7 +13,7 @@ func TestPhaseInflation(t *testing.T) {
 	minter := DefaultInitialMinter()
 
 	// Governing Mechanism:
-	//    Juno tokenomics
+	//    Raptor tokenomics
 
 	tests := []struct {
 		phase        uint64

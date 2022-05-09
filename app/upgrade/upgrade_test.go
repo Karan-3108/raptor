@@ -42,7 +42,7 @@ var (
 	genCoin          = sdk.NewCoin(sdk.DefaultBondDenom, genTokens)
 	bondCoin         = sdk.NewCoin(sdk.DefaultBondDenom, bondTokens)
 	escapeBondCoin   = sdk.NewCoin(sdk.DefaultBondDenom, escapeBondTokens)
-	maxJunoPerAcc    = sdk.NewIntFromUint64(50000000000)
+	maxRaptorPerAcc  = sdk.NewIntFromUint64(50000000000)
 )
 
 type UpgradeTestSuite struct {
